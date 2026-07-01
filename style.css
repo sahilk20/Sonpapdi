@@ -2,132 +2,147 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-
 height:100vh;
+overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#ff758c,#ff7eb3);
-overflow:hidden;
-color:white;
-text-align:center;
-
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffb199);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+padding:20px;
 }
 
-.container{
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
 
-background:rgba(255,255,255,.15);
-padding:40px;
+.glass{
+width:100%;
+max-width:420px;
+padding:30px;
 border-radius:25px;
+background:rgba(255,255,255,.15);
 backdrop-filter:blur(15px);
-
-box-shadow:0 0 30px rgba(0,0,0,.3);
-
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+z-index:2;
 }
 
 h1{
-
-font-size:45px;
-margin-bottom:20px;
-
-}
-
-h2{
-
-margin-bottom:35px;
-
+font-size:2rem;
+color:#fff;
+margin-bottom:15px;
+min-height:50px;
 }
 
 p{
-
-font-size:22px;
-line-height:40px;
-margin-top:20px;
-
-}
-
-.buttons{
-
-display:flex;
-justify-content:center;
-gap:40px;
-
+font-size:18px;
+color:#fff;
+line-height:1.8;
+margin-bottom:30px;
 }
 
 button{
-
-padding:15px 40px;
-
+padding:15px 35px;
+font-size:18px;
 border:none;
-
 border-radius:50px;
-
-font-size:22px;
-
 cursor:pointer;
-
+background:#ff1744;
+color:white;
 transition:.3s;
+box-shadow:0 0 20px rgba(255,23,68,.4);
+}
 
+button:hover{
+transform:scale(1.08);
+}
+
+.buttons{
+position:relative;
+height:180px;
+margin-top:20px;
 }
 
 #yes{
-
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:20px;
 background:#00c853;
-color:white;
-
-}
-
-#yes:hover{
-
-transform:scale(1.15);
-
 }
 
 #no{
-
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
 background:#f44336;
-color:white;
-position:absolute;
-
 }
 
-.hearts::before,
-.hearts::after{
-
-content:"❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
-
-position:absolute;
-
-font-size:35px;
-
-animation:float 8s linear infinite;
-
-opacity:.25;
-
+.hearts{
+position:fixed;
 width:100%;
-
+height:100%;
+top:0;
+left:0;
+overflow:hidden;
+pointer-events:none;
 }
 
-.hearts::after{
-
-animation-delay:4s;
-
+.hearts span{
+position:absolute;
+bottom:-50px;
+font-size:30px;
+animation:float 10s linear infinite;
 }
+
+.hearts span:nth-child(1){left:10%;animation-delay:0s;}
+.hearts span:nth-child(2){left:20%;animation-delay:2s;}
+.hearts span:nth-child(3){left:35%;animation-delay:4s;}
+.hearts span:nth-child(4){left:50%;animation-delay:1s;}
+.hearts span:nth-child(5){left:65%;animation-delay:3s;}
+.hearts span:nth-child(6){left:80%;animation-delay:5s;}
+.hearts span:nth-child(7){left:90%;animation-delay:6s;}
+.hearts span:nth-child(8){left:45%;animation-delay:7s;}
 
 @keyframes float{
-
 0%{
-transform:translateY(100vh);
+transform:translateY(0) scale(.8);
+opacity:0;
 }
-
+20%{
+opacity:1;
+}
 100%{
-
-transform:translateY(-100vh);
-
+transform:translateY(-120vh) scale(1.4);
+opacity:0;
+}
 }
 
+@media(max-width:480px){
+
+.glass{
+padding:25px;
+}
+
+h1{
+font-size:1.7rem;
+}
+
+p{
+font-size:16px;
+}
+
+button{
+width:170px;
+font-size:17px;
+}
 }
