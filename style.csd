@@ -1,0 +1,142 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffb199);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+padding:20px;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.glass{
+width:100%;
+max-width:420px;
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+z-index:2;
+}
+
+h1{
+font-size:2rem;
+color:#fff;
+margin-bottom:15px;
+min-height:50px;
+}
+
+p{
+font-size:18px;
+color:#fff;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin-top:30px;
+    position:relative;
+    height:70px;
+}
+
+#yes,#no{
+    width:130px;
+    height:50px;
+    border:none;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#yes{
+    background:#28a745;
+}
+
+#no{
+    background:#ff3b5c;
+    position:absolute;
+    right:0;
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+overflow:hidden;
+pointer-events:none;
+}
+
+.hearts span{
+position:absolute;
+bottom:-50px;
+font-size:30px;
+animation:float 10s linear infinite;
+}
+
+.hearts span:nth-child(1){left:10%;animation-delay:0s;}
+.hearts span:nth-child(2){left:20%;animation-delay:2s;}
+.hearts span:nth-child(3){left:35%;animation-delay:4s;}
+.hearts span:nth-child(4){left:50%;animation-delay:1s;}
+.hearts span:nth-child(5){left:65%;animation-delay:3s;}
+.hearts span:nth-child(6){left:80%;animation-delay:5s;}
+.hearts span:nth-child(7){left:90%;animation-delay:6s;}
+.hearts span:nth-child(8){left:45%;animation-delay:7s;}
+
+@keyframes float{
+0%{
+transform:translateY(0) scale(.8);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.4);
+opacity:0;
+}
+}
+
+@media(max-width:480px){
+
+.glass{
+padding:25px;
+}
+
+h1{
+font-size:1.7rem;
+}
+
+p{
+font-size:16px;
+}
+
+button{
+width:170px;
+font-size:17px;
+}
+}
