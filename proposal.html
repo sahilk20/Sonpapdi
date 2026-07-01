@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>I Love You ❤️</title>
+<title>Will You Marry Me? ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,47 +14,120 @@
 
 <body>
 
-<div class="container">
+<div class="hearts">
+<span>❤️</span>
+<span>💖</span>
+<span>💕</span>
+<span>💗</span>
+<span>💝</span>
+<span>❤️</span>
+<span>💖</span>
+<span>💕</span>
+</div>
 
-<h1>I Love You Samira ❤️</h1>
+<div class="glass">
 
-<h2>Will you be my life partner?</h2>
-
-<h3>💍</h3>
+<h1>💍 Will You Marry Me? 💍</h1>
 
 <p>
 
-From the day you came into my life,
+From the moment you came into my life,
 
-every moment became beautiful.
+everything became brighter.
 
-I can't imagine my future without you.
+You are my happiness,
 
-I want to laugh with you,
+my peace,
 
-grow with you,
-
-travel with you,
-
-and spend every day of my life with you.
-
-❤️
-
-Will you marry me?
+and my forever.
 
 </p>
 
-<h1>Forever Yours ❤️</h1>
+<div class="buttons">
+
+<button id="yes">YES ❤️</button>
+
+<button id="no">NO 🙈</button>
+
+</div>
 
 </div>
 
 <script>
+
+const yes=document.getElementById("yes");
+const no=document.getElementById("no");
+
+yes.onclick=function(){
 
 confetti({
 particleCount:250,
 spread:180,
 origin:{y:0.6}
 });
+
+setTimeout(()=>{
+
+document.body.innerHTML=`
+
+<div class="glass">
+
+<h1>❤️ I Love You Samira ❤️</h1>
+
+<p style="font-size:20px;line-height:2;">
+
+My Dearest Samira,
+
+<br><br>
+
+Thank you for making every day beautiful.
+
+I promise to stand by your side,
+
+support you,
+
+respect you,
+
+and love you forever.
+
+<br><br>
+
+💍
+
+Will you be my life partner?
+
+<br><br>
+
+Forever Yours,
+
+<br>
+
+❤️ Sahil ❤️
+
+</p>
+
+</div>
+
+`;
+
+},1500);
+
+}
+
+function move(){
+
+const x=Math.random()*(window.innerWidth-140);
+
+const y=Math.random()*(window.innerHeight-80);
+
+no.style.left=x+"px";
+no.style.top=y+"px";
+
+}
+
+no.addEventListener("mouseover",move);
+no.addEventListener("touchstart",move);
+no.addEventListener("click",move);
 
 </script>
 
